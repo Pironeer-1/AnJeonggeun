@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import CommentList from './chapter_05/CommentList';
+import NotificationList from './chapter_06/NotificationList';
 
 ReactDOM.render(
   <React.StrictMode>
-    <CommentList/>
+    <NotificationList/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 5장
+// import CommentList from './chapter_05/CommentList';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <CommentList/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 4장
 // import Clock from './chapter_04/Clock'
