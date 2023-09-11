@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import LandingPage from './chapter_09/LandingPage';
+import AttendanceBook from './chapter_10/AttendanceBook';
 
 ReactDOM.render(
   <React.StrictMode>
-    <LandingPage/>
+    <AttendanceBook/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 9장
+// import LandingPage from './chapter_09/LandingPage';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <LandingPage/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 8장
 // import ConfirmButton from './chapter_08/ConfirmButton';
