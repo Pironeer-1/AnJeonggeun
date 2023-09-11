@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Accommodate from './chapter_07/Accommodate';
+import ConfirmButton from './chapter_08/ConfirmButton';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Accommodate/>
+    <ConfirmButton/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 7장
+// import Accommodate from './chapter_07/Accommodate';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Accommodate/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 6장
 // import NotificationList from './chapter_06/NotificationList';
