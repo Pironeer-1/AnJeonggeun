@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import ConfirmButton from './chapter_08/ConfirmButton';
+import LandingPage from './chapter_09/LandingPage';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ConfirmButton/>
+    <LandingPage/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 8장
+// import ConfirmButton from './chapter_08/ConfirmButton';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <ConfirmButton/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 7장
 // import Accommodate from './chapter_07/Accommodate';
