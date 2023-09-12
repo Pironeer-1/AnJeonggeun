@@ -13,6 +13,7 @@ function templateHTML(title, list, body){
         <body>
             <h1><a href="/">WEB</a></h1>
             ${list}
+            <a href="/create">create</a>
             ${body}
         </body>
     </html>
@@ -60,6 +61,24 @@ var app = http.createServer(function(request,response){
                 });
             });
         }
+    }else if(pathname === '/create'){
+        fs.readdir('./data', function(error, filelist) {  // readdir : 해당 디렉토리에 있는 파일 목록을 배열로 반환
+            var title = 'WEB - create';
+            var list = templateList(filelist);
+            var template = templateHTML(title, list, `
+                <form action="http://localhost:3000/create_process" method="post">
+                    <p><input type="text" name="title" placeholder="title"></p>
+                    <p>
+                        <textarea name="description" placeholder="description"></textarea>
+                    </p>
+                    <p>
+                        <input type="submit">
+                    </p>
+                </form>
+            `);
+            response.writeHead(200);    // 응답 헤더에 대한 정보 기록 200:정상
+            response.end(template);
+        });
     }else{
         response.writeHead(404);
         response.end('Not found');
