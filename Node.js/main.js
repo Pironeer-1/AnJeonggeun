@@ -89,10 +89,16 @@ var app = http.createServer(function(request,response){
 
         request.on('end', function () {
             var post = qs.parse(body);
+            // console.log(post);
+
             var title = post.title;
             var description = post.description;
-            console.log(title);
-            console.log(description);
+            // console.log(title);
+            // console.log(description);
+            fs.writeFile(`data/${title}`, description, 'utf8', function(err){
+                response.writeHead(302, {Location: `/?id=${title}`});
+                response.end();
+            })
         });
     }else{
         response.writeHead(404);
