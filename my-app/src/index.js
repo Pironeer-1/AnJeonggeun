@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import ProfileCard from './chapter_13/ProfileCard';
+import DarkOrLight from './chapter_14/DarkOrLight';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProfileCard/>
+    <DarkOrLight/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 13장
+// import ProfileCard from './chapter_13/ProfileCard';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <ProfileCard/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 12장
 // import Calculator from './chapter_12/Calculator';
