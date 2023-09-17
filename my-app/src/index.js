@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import SignUp from './chapter_11/SignUp';
+import Calculator from './chapter_12/Calculator';
 
 ReactDOM.render(
   <React.StrictMode>
-    <SignUp/>
+    <Calculator/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 11장
+// import SignUp from './chapter_11/SignUp';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <SignUp/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 10장
 // import AttendanceBook from './chapter_10/AttendanceBook';
