@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import Calculator from './chapter_12/Calculator';
+import ProfileCard from './chapter_13/ProfileCard';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calculator/>
+    <ProfileCard/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 12장
+// import Calculator from './chapter_12/Calculator';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <Calculator/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 11장
 // import SignUp from './chapter_11/SignUp';
