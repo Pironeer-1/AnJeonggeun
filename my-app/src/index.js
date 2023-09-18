@@ -4,11 +4,11 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-import DarkOrLight from './chapter_14/DarkOrLight';
+import Blocks from './chapter_15/Blocks';
 
 ReactDOM.render(
   <React.StrictMode>
-    <DarkOrLight/>
+    <Blocks/>
   </React.StrictMode>,
   document.getElementById('root')
 )
@@ -17,6 +17,16 @@ ReactDOM.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// 14장
+// import DarkOrLight from './chapter_14/DarkOrLight';
+
+// ReactDOM.render(
+//   <React.StrictMode>
+//     <DarkOrLight/>
+//   </React.StrictMode>,
+//   document.getElementById('root')
+// )
 
 // 13장
 // import ProfileCard from './chapter_13/ProfileCard';
