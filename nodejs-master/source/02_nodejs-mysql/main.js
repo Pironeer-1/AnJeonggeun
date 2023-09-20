@@ -6,6 +6,18 @@ var qs = require('querystring');
 var template = require('./lib/template.js');
 var path = require('path');
 var sanitizeHtml = require('sanitize-html');
+var mysql = require('mysql');
+
+require('dotenv').config();
+
+var db = mysql.createConnection({
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_NAME,
+    port: process.env.DB_PORT
+});
+db.connect();
 
 var app = http.createServer(function(request, response) {
     var _url = request.url;
@@ -14,14 +26,15 @@ var app = http.createServer(function(request, response) {
 
     if(pathname === '/') {
         if(queryData.id === undefined) {
-            fs.readdir('./data', function(error, filelist) {
-                var title = 'Welcome';
+            db.query(`SELECT * FROM topic`, function(error, topics){
+                var title='Welcome';
                 var description = 'Hello, Node.js';
-                var list = template.list(filelist);
+                var list = template.list(topics);
                 var html = template.HTML(title, list,
-                    `<h2>${title}</h2><p>${description}</p>`,
+                    `<h2>${title}</h2>${description}`,
                     `<a href="/create">create</a>`
-                );
+                    );
+                
                 response.writeHead(200);
                 response.end(html);
             });
