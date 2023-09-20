@@ -1,23 +1,9 @@
 console.log('Hello no deamon');
 var http = require('http');
-var fs = require('fs');
 var url = require('url');
 var qs = require('querystring');
 var template = require('./lib/template.js');
-var path = require('path');
-var sanitizeHtml = require('sanitize-html');
-var mysql = require('mysql');
-
-require('dotenv').config();
-
-var db = mysql.createConnection({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT
-});
-db.connect();
+var db = require('./lib/db.js');
 
 var app = http.createServer(function(request, response) {
     var _url = request.url;
