@@ -3,8 +3,11 @@ var app = express();
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var compression = require('compression');
+var helmet = require('helmet');
 var topicRouter = require('./routes/topic');
 var indexRouter = require('./routes/index');
+
+app.use(helmet());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
