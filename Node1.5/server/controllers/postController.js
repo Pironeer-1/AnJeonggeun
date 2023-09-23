@@ -1,6 +1,7 @@
 // Models
 const postModel = require('../models/postModel.js');
 const homeModel = require('../models/homeModel.js');
+const commentModel = require('../models/commentModel.js');
 
 module.exports = {
     viewPost: async (req, res) => {
@@ -9,7 +10,9 @@ module.exports = {
 
         const posts = await homeModel.getPosts();
 
-        res.render('post.ejs', {posts: posts, post: post});
+        const comments = await commentModel.getComments(postId);
+
+        res.render('post.ejs', {posts: posts, post: post, comments: comments});
     },
     createPost: async (req,res) => {
         const posts = await homeModel.getPosts();
@@ -20,7 +23,8 @@ module.exports = {
         const newPost = req.body;
         const result = await postModel.createNewPost(newPost);
         
-        res.redirect(`/post/read/${result.insertId}`);
+        // res.redirect(`/post/read/${result.insertId}`);
+        res.json({insertId: result.insertId});
     },
     deletePost: async (req,res) => {
         const postId = req.params.post_id;

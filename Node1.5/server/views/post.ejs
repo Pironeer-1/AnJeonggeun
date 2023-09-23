@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/input.css">
+
+<h1><%= post.title %></h1>
+<p><%= post.content %></p>
+
+<form action="/post/delete/<%= post.post_id %>" method="post">
+    <button>Delete</button>
+    <a href="/post/update/<%= post.post_id %>">Update</a>
+</form>
+
+<!-- 댓글 표시 -->
+
+<div class="comment-container">
+    <% for(let comment of comments) { %>
+    <div class="comment-div">
+        <div>
+            <p><b>사용자 이름 : <%= comment.username %></b></p>
+            <p>댓글 내용 : <%= comment.content %></p>
+        </div>
+        <form action="/comment/delete/<%= comment.comment_id %>" method="post">
+            <button>Delete</button>
+        </form>
+    </div>
+    <% } %>
+</div>
+
+<form action="/comment/create/<%= post.post_id %>" method="post">
+    <input type="text" name="username" placeholder="username..." class="input-text">
+    <textarea name="comment" id="" cols="30" rows="10" placeholder="comment..." class="input-content"></textarea>
+    <button>Submit</button>
+</form>

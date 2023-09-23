@@ -1,6 +1,10 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+const port = 8000;
+
+// client 접근 허용
+const cors = require('cors');
+app.use(cors());
 
 const bodyParser = require('body-parser');
 // parse application/x-www-form-urlencoded
@@ -29,6 +33,8 @@ app.get('/', homeController.home);
 // Routes
 const postRouter = require('./routers/postRouter.js');
 app.use('/post', postRouter);
+const commentRouter = require('./routers/commentRouter.js');
+app.use('/comment', commentRouter);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
